@@ -92,9 +92,7 @@ installConfluence(){
 ###   INSTALLING..   ###
 echo "Installing Confluence"
 }
-installBoth(){
-echo "Installing Both"
-}
+
 
 
 
@@ -120,7 +118,7 @@ if [ $INSTALL_OPTION == "1" ]; then
   echo "Installing Jira Software.."
   installJiraSoftware
   echo "Installing Confluence Software"
-  installConfluenceSoftware
+  installConfluence
 fi
 
 if [ $INSTALL_OPTION == "2" ]; then
@@ -135,6 +133,6 @@ if [ $INSTALL_OPTION == "3" ]; then
   installPackages
   firewallOpen
   echo "Installing Confluence Software"
-  installConfluenceSoftware
+  installConfluence
 fi
 
