@@ -99,48 +99,40 @@ echo "Installing Both"
 
 
 ###   Read Data   ###
-read -p "Install only Jira? [y/N]: " InstallJiraSoftware
-read -p "Install obly Confluence? [y/N]: " InstallJiraConfluence
-read -p "Install Both? [y/N]:" InstallBoth
+INSTALL_OPTION=""
+while [[ $INSTALL_OPTION != [123] ]]; do
+    echo
+    echo "1) Install Jira and Confluence"
+    echo "2) Jira Desk only"
+    echo "3) Jira Confluence only"
+    read -p "Choose install option: " INSTALL_OPTION
+done
 
-if [ "${InstallJiraSoftware}" == "y" ]; then
-  read -p "Jira Software Domain Name: " JiraSoftwareDomainName
-fi
-if [ "${InstallJiraConfluence}" == "y" ]; then
-  read -p "Jira Confluence Domain Name: " JiraConfluenceDomainName
-fi
-if [ "${InstallBoth}" == "y" ]; then
-  read -p "Jira Software Domain Name: " JiraSoftwareDomainName
-  read -p "Jira Confluence Domain Name: " JiraConfluenceDomainName
-fi
 
 
 ###   INSTALLING..   ###
 
 # Jira Software #
-if [ "${InstallJiraSoftware}" == "y" ]; then
+if [ $INSTALL_OPTION == "1" ]; then
   echo "Installing Main Packages.."
-  installPackages
-  firewallOpen
-  echo "Installing Jira Software.."
-  installJiraSoftware
+  #installPackages
+  #firewallOpen
+  #echo "Installing Jira Software.."
+  #installJiraSoftware
 fi
 
-# Confluence #
-if [ "${InstallJiraConfluence}" == "y" ]; then
-  echo "Installing Main Packages.."
-  installPackages
-  firewallOpen
-  echo "Installing Jira Confluence.."
-  installConfluence
+if [ $INSTALL_OPTION == "2" ]; then
+  echo "Installing JIRA Packages.."
+  #installPackages
+  #firewallOpen
+  #echo "Installing Jira Software.."
+  #installJiraSoftware
 fi
-
-# Jira + Confluence #
-if [ "${InstallBoth}" == "y" ]; then
-  echo "Installing Main Packages.."
-  installPackages
-  firewallOpen
-  echo "Installing Jira Confluence.."
-  installBoth
+if [ $INSTALL_OPTION == "3" ]; then
+  echo "Installing CONFLUENCE Packages.."
+  #installPackages
+  #firewallOpen
+  #echo "Installing Jira Software.."
+  #installJiraSoftware
 fi
 
