@@ -2,23 +2,13 @@
 
 ###   Check sudo   ###
 [ $(whoami) != "root" ] && echo "Run as sudo!" && exit
-
-
-
 ###    Install main packages   ###
 installPackages() {
   yum update -y
-  yum install -y wget
-  # Java #
-  yum install -y java-1.8.0-openjdk
-  yum install -y java-1.8.0-openjdk-devel
-  # Nginx #
-  yum install -y epel-release
-  yum install -y nginx
+  yum install -y wget gzip epel-release nginx
   systemctl enable nginx.service
   systemctl start nginx
 }
-
 ###   Firewall   ###
 firewallOpen() {
   # Nginx #
@@ -29,7 +19,7 @@ firewallOpen() {
 ###   Install Jira Software   ###
 installJiraSoftware() {
   # Make response.varfile #
-  echo "app.jiraHome=/jira
+echo "app.jiraHome=/jira
 app.install.service"'$'"Boolean=true
 existingInstallationDir=/usr/local/JIRA
 sys.confirmedUpdateInstallationString=false
@@ -85,16 +75,12 @@ rmiPort"'$'"Long=8005" > response.varfile
   done </etc/nginx/nginx.conf.back
   # Reload nginx #
   systemctl reload nginx.service
-
 }
 ###NEED TO BE IMPLEMENTED###
 installConfluence(){
 ###   INSTALLING..   ###
 echo "Installing Confluence"
 }
-
-
-
 
 ###   Read Data   ###
 INSTALL_OPTION=""
