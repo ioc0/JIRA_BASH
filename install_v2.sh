@@ -103,7 +103,7 @@ INSTALL_OPTION=""
 while [[ $INSTALL_OPTION != [123] ]]; do
     echo
     echo "1) Install Jira and Confluence"
-    echo "2) Jira Desk only"
+    echo "2) Jira only"
     echo "3) Jira Confluence only"
     read -p "Choose install option: " INSTALL_OPTION
 done
@@ -115,24 +115,26 @@ done
 # Jira Software #
 if [ $INSTALL_OPTION == "1" ]; then
   echo "Installing Main Packages.."
-  #installPackages
-  #firewallOpen
-  #echo "Installing Jira Software.."
-  #installJiraSoftware
+  installPackages
+  firewallOpen
+  echo "Installing Jira Software.."
+  installJiraSoftware
+  echo "Installing Confluence Software"
+  installConfluenceSoftware
 fi
 
 if [ $INSTALL_OPTION == "2" ]; then
   echo "Installing JIRA Packages.."
-  #installPackages
-  #firewallOpen
-  #echo "Installing Jira Software.."
-  #installJiraSoftware
+  installPackages
+  firewallOpen
+  echo "Installing Jira Software.."
+  installJiraSoftware
 fi
 if [ $INSTALL_OPTION == "3" ]; then
   echo "Installing CONFLUENCE Packages.."
-  #installPackages
-  #firewallOpen
-  #echo "Installing Jira Software.."
-  #installJiraSoftware
+  installPackages
+  firewallOpen
+  echo "Installing Confluence Software"
+  installConfluenceSoftware
 fi
 
