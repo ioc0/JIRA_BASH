@@ -112,6 +112,8 @@ done
 
 # Jira Software #
 if [ $INSTALL_OPTION == "1" ]; then
+  read -p "Jira Software Domain Name: " JiraSoftwareDomainName
+  read -p "Jira Confluence Domain Name: " JiraConfluenceDomainName
   echo "Installing Main Packages.."
   installPackages
   firewallOpen
@@ -122,6 +124,7 @@ if [ $INSTALL_OPTION == "1" ]; then
 fi
 
 if [ $INSTALL_OPTION == "2" ]; then
+  read -p "Jira Software Domain Name: " JiraSoftwareDomainName
   echo "Installing JIRA Packages.."
   installPackages
   firewallOpen
@@ -129,6 +132,7 @@ if [ $INSTALL_OPTION == "2" ]; then
   installJiraSoftware
 fi
 if [ $INSTALL_OPTION == "3" ]; then
+  read -p "Jira Confluence Domain Name: " JiraConfluenceDomainName
   echo "Installing CONFLUENCE Packages.."
   installPackages
   firewallOpen
