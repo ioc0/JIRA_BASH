@@ -5,7 +5,15 @@
 ###    Install main packages   ###
 installPackages() {
   yum update -y
-  yum install -y wget gzip epel-release nginx
+  yum install -y wget
+
+  # Java #
+  yum install -y java-1.8.0-openjdk
+  yum install -y java-1.8.0-openjdk-devel
+
+  # Nginx #
+  yum install -y epel-release
+  yum install -y nginx
   systemctl enable nginx.service
   systemctl start nginx
 }
