@@ -1,0 +1,8 @@
+# install4j response file for JIRA Software 8.5.4
+app.install.service$Boolean=true
+existingInstallationDir=/usr/local/JIRA Software
+launch.application$Boolean=true
+sys.adminRights$Boolean=true
+sys.confirmedUpdateInstallationString=false
+sys.installationDir=/opt/atlassian/jira
+sys.languageId=en
