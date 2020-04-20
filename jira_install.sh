@@ -7,7 +7,7 @@ JIRA_INSTALLER_NAME="atlassian-jira-software-8.5.4-x64.bin"
 JIRACONFL_INSTALLER_NAME="atlassian-confluence-6.13.11-x64.bin"
 
 JIRA_INSTALLER_URL="https://product-downloads.atlassian.com/software/jira/downloads/$JIRA_INSTALLER_NAME"
-JIRACONFL_INSTALLER_URL="https://product-downloads.atlassian.com/software/confluence/downloads/$JIRACONF_INSTALLER_NAME"
+JIRACONFL_INSTALLER_URL="https://product-downloads.atlassian.com/software/confluence/downloads/$JIRACONFL_INSTALLER_NAME"
 
 JIRA_RESPONSES="response.varfile_jira"
 JIRACONFL_RESPONSES="response.varfile_confluence"
