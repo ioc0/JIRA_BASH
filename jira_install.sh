@@ -102,7 +102,7 @@ setupJira() {
 
 setupJiraConfluence() {
     echo
-    echo "Installing Jira Confluence.." | tee -a $LOG
+    echo "Installing Confluence.." | tee -a $LOG
     if [[ -e "$RESDIR/$JIRACONFL_INSTALLER_NAME" ]]; then
         chmod +x "$RESDIR/$JIRACONFL_INSTALLER_NAME"
     else
@@ -117,10 +117,10 @@ setupJiraConfluence() {
     fi
     $RESDIR/$JIRACONFL_INSTALLER_NAME -q -varfile $JIRACONFL_RESPONSES >> $LOG 2>&1
 
-    echo "Done with Jira Confluence." | tee -a $LOG
+    echo "Done with Confluence." | tee -a $LOG
     
-    read -p "Enter Jira Confluence DNS name: " JIRACONFL_DNS
-    echo "Jira Confluence will be available on this machine by http://$JIRACONFL_DNS"
+    read -p "Enter Confluence DNS name: " JIRACONFL_DNS
+    echo "Confluence will be available on this machine by http://$JIRACONFL_DNS"
     #add proxy config
     cp "$RESDIR/confluence_proxy.conf" /etc/nginx/conf.d/
     cp "$RESDIR/confluence_server.xml" /opt/atlassian/confluence/conf/server.xml
@@ -160,10 +160,10 @@ echo "This script log file is $LOG"
 INSTALL_OPTION=""
 while [[ $INSTALL_OPTION != [123] ]]; do
     echo
-    echo "1) Install Jira Service Desk and Confluence"
+    echo "1) Install Jira and Confluence"
     echo "2) Jira Software only"
-    echo "3) Jira Confluence only"
-    read -p "Choice install option: " INSTALL_OPTION
+    echo "3) Confluence only"
+    read -p "Choose install option: " INSTALL_OPTION
 done
 
 echo
